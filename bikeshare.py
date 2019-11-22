@@ -137,68 +137,6 @@ def station_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-
-    print('\nCalculating Trip Duration...\n')
-    start_time = time.time()
-
-    # total travel time
-    total_travel = df['Trip Duration'].sum()
-    minute, second = divmod(total_travel, 60)
-    hour, minute = divmod(minute, 60)
-
-    print('Total travel time:\n ({}) hours\n  ({}) minutes\n  ({}) seconds'.format(hour, minute, second))
-
-    # display mean travel time
-    mean_travel = round(df['Trip Duration'].mean())
-    minute2, second2 = divmod(total_travel, 60)
-    hour2, minute2 = divmod(minute, 60)
-
-    print('\nMean travel time:\n   ({})  hours\n  ({}) minutes\n  ({}) seconds'.format(hour2, minute2, second2))
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
-def user_stats(df):
-    """Displays statistics on bikeshare users."""
-
-    print('\nCalculating User Stats...\n')
-    start_time = time.time()
-
-    # counts of user types
-    subscribers = df['User Type'].str.count('Subscriber').sum()
-    customers = df['User Type'].str.count('Customer').sum()
-    print(' -- Subscribers = {}\n -- Customers   = {}\n'.format(int(subscribers), int(customers)))
-
-    # counts of gender
-    if('Gender' in df):
-        male_g = df['Gender'].str.count('Male').sum()
-        female_g = df['Gender'].str.count('Female').sum()
-        print('\n Number of -( MALE )- users are {}\n Number of -(FEMALE)- users are {}\n'.format(int(male_g), int(female_g)))
-
-    # earliest, most recent, and most common year of birth
-    if('Birth Year' in df):
-        earliest_year = df['Birth Year'].min()
-        recent_year = df['Birth Year'].max()
-        common_birth = (df['Birth Year']).mode()
-        print('\n -- Oldest Birth Year is {}\n -- Youngest Birth Year is {}\n -- Popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), int(common_birth)))
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
-
-def display_data(df):
-        print("\nWould you like see five rows of data ?? Enter yes or no.")
-        set_data = input().lower()
-
-        # while loop prompt if the user wants to display more than 5 lines of data
-        i = 5
-        while set_data == 'yes':
-            print(df[:i])
-            print('\nWould you like to see five more rows of data ?? Enter yes or no.')
-            set_data = input().lower()
-            i += 5
-
 def main():
     while True:
         city, month, day = get_filters()
