@@ -74,8 +74,10 @@ def load_data(city, month, day):
     # to_datetime convert start time to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
-    df['month'] = df['Start Time'].dt.month
+    # convert months to datetime format
+    df['month'] = df['Start Time'].dt.month                       # convert days to datetime format
     df['day_of_week'] = df['Start Time'].dt.weekday_name
+    # convert hours to datetime format
     df['hour'] = df['Start Time'].dt.hour
 
   # condition
