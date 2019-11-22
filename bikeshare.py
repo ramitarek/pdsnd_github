@@ -187,6 +187,18 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_data(df):
+        print("\nWould you like see five rows of data ?? Enter yes or no.")
+        set_data = input().lower()
+
+        # while loop prompt if the user wants to display more than 5 lines of data
+        i = 5
+        while set_data == 'yes':
+            print(df[:i])
+            print('\nWould you like to see five more rows of data ?? Enter yes or no.')
+            set_data = input().lower()
+            i += 5
+
 def main():
     while True:
         city, month, day = get_filters()
