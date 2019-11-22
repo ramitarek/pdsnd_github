@@ -5,7 +5,7 @@ October 29, 2019
 __*Explore US Bikeshare Data*__
 
 ### Description
-This project contains python code that includes US bike share data for three different major cities: New York city, Chicago, and Washington. When the user runs the code, a welcoming message will appear, then will ask the user to choose a desired city, month, and day. Finally once all inputs are given correctly the result (Statistical Descriptive Data) will appear
+This project contains **python code** that includes US bike share data for three different major cities: New York city, Chicago, and Washington. When the user runs the code, a welcoming message will appear, then will ask the user to choose a desired city, month, and day. Finally once all inputs are given correctly the result _Statistical Descriptive Data_ will appear
 
 ### Files used
  1. bikeshare.py
